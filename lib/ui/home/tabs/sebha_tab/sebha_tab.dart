@@ -78,7 +78,7 @@ class _SebhaTabState extends State<SebhaTab> {
   }
   void onSebhaTap() {
     setState(() {
-      if (counter == 5 ) {
+      if (counter == 33 ) {
         index = (index + 1) % sebha.length;
         counter = 0;
       } else {

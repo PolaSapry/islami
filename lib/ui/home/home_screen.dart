@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami/providers/radio_manager_provider.dart';
 import 'package:islami/ui/home/tabs/hadeth_tab/hadeth_tab.dart';
 import 'package:islami/ui/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami/ui/home/tabs/radio_tab/radio_tab.dart';
 import 'package:islami/ui/home/tabs/sebha_tab/sebha_tab.dart';
 import 'package:islami/ui/home/tabs/time_tab/time_tab.dart';
 import 'package:islami/utils/app_colors.dart';
+import 'package:provider/provider.dart';
 import '../../utils/app_assets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranTab(),
     HadethTab(),
     SebhaTab(),
-    RadioTab(),
+    ChangeNotifierProvider(
+        create: (context) => RadioManagerProvider(),
+        child: RadioTab()),
     TimeTab(),
   ];
 
