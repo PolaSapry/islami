@@ -36,24 +36,41 @@ class DateFormater {
   }
 
   static Map<String, dynamic> getNextPrayerCountDown(Map<String, dynamic> prayerTimes) {
-    Map<String, dynamic> timeDifference = {};
+    DateTime now = DateTime.now();
+    String? nextPrayerName;
+    Duration? shortestDuration;
 
     prayerTimes.forEach((prayName, prayTimeString) {
-        DateTime prayerTime = DateFormat("HH:mm").parse(prayTimeString);
-        DateTime prayerDateTime = DateTime(_now.year, _now.month, _now.day,
-            prayerTime.hour, prayerTime.minute);
+      DateTime prayerTime = DateFormat("HH:mm").parse(prayTimeString);
+      DateTime prayerDateTime = DateTime(
+        now.year,
+        now.month,
+        now.day,
+        prayerTime.hour,
+        prayerTime.minute,
+      );
 
-        if (prayerDateTime.isBefore(_now) ||
-            prayerDateTime.isAtSameMomentAs(_now)) {
-          prayerDateTime = prayerDateTime.add(Duration(days: 1));
-        }
+      if (prayerDateTime.isBefore(now)) {
+        prayerDateTime = prayerDateTime.add(const Duration(days: 1));
+      }
 
-        Duration difference = prayerDateTime.difference(_now);
-        timeDifference[prayName] = difference;
-      },
-    );
-    return timeDifference;
+      Duration diff = prayerDateTime.difference(now);
+
+      if (shortestDuration == null || diff < shortestDuration!) {
+        shortestDuration = diff;
+        nextPrayerName = prayName;
+      }
+    });
+
+    return {
+      "nextPrayer": nextPrayerName,
+      "timeRemaining": shortestDuration,
+    };
   }
+
+
+
+
 }
 
 class TimeConverter {

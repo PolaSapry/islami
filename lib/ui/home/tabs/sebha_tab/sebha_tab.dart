@@ -36,6 +36,11 @@ class _SebhaTabState extends State<SebhaTab> {
           alignment: Alignment.center,
           children: [
             InkWell(
+                splashColor: Colors.transparent,   // إلغاء لون الموجة
+                highlightColor: Colors.transparent, // إلغاء لون اللمس المستمر
+                hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+
               onTap: (){
                 onSebhaTap();
               },

@@ -58,8 +58,8 @@ class _RadioTabState extends State<RadioTab> {
               if (snapshot.hasError) {
                 return Center(
                   child: Text(
-                    snapshot.hasError.toString(),
-                    style: AppStyles.bold14Black,
+                    snapshot.error.toString(),
+                    style: AppStyles.bold14White,
                   ),
                 );
               }
