@@ -25,8 +25,18 @@ class AppAssets {
   static const String onboarding4 = 'assets/images/onboardnig4.png';
   static const String onboarding5 = 'assets/images/onboardnig5.png';
 
-  static const String sebhaBody = 'assets/images/SebhaBody 1.png';
+  static const String sebhaBody = 'assets/images/sebha_Body.png';
   static const String headSebha = 'assets/images/head_sebha.png';
+
+
+
+  static const String hadethCornerLeft = 'assets/images/hadeth_corner_left.png';
+  static const String hadethCornerRight = 'assets/images/hadeth_corner_right.png';
+  static const String hadethCDetailsBg = 'assets/images/hadeth_details_bg.png';
+  static const String hadethMosque = 'assets/images/hadeth_mosque.png';
+  static const String soundWave = 'assets/images/soundWave.png';
+  static const String timeBox = 'assets/images/timeBox.png';
+  static const String boxTime = 'assets/images/time_box.png';
 
 
 }

@@ -36,6 +36,11 @@ class _SebhaTabState extends State<SebhaTab> {
           alignment: Alignment.center,
           children: [
             InkWell(
+                splashColor: Colors.transparent,   // إلغاء لون الموجة
+                highlightColor: Colors.transparent, // إلغاء لون اللمس المستمر
+                hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+
               onTap: (){
                 onSebhaTap();
               },
@@ -78,7 +83,7 @@ class _SebhaTabState extends State<SebhaTab> {
   }
   void onSebhaTap() {
     setState(() {
-      if (counter == 5 ) {
+      if (counter == 33 ) {
         index = (index + 1) % sebha.length;
         counter = 0;
       } else {
